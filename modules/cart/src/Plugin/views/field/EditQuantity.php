@@ -162,6 +162,12 @@ class EditQuantity extends FieldPluginBase {
         '#step' => $step,
         '#required' => TRUE,
       ];
+
+      $form['order_item_id'][$row_index] = [
+        '#name' => 'order_item_id',
+        '#type' => 'hidden',
+        '#value' => $order_item->id(),
+      ];
     }
     $form['actions']['submit']['#update_cart'] = TRUE;
     $form['actions']['submit']['#show_update_message'] = TRUE;
